@@ -19,17 +19,20 @@
             <td class="news--description">@news.Description</td>
             <td class="news--settings">
                 <a href="@Url.ActionLink("Edit", "News", new {NewsId = news.Id})"><button>редактировать</button></a>
-                @using (Html.BeginForm("DeleteNews", "News", new { }))
-
+@*                если ипользуешь Html - хэлперы, то передавать можно id в самом BeginForm , передавая id через оператор new
+                                                                    new {id =news.Id }
+            также удаление - это метод post , в хэлпере добавить FormMethod.Post перед new
+*@                @using (Html.BeginForm("DeleteNews", "News", new { }))
                 {
                     <input type="hidden" name="Id" value="@news.Id" />
                     <input class="input_submit" type="submit" id="delete" value="Удалить новость">
                 }
+
             </td>
             
             <td>
-                
-                    <div class="small-img"><img height="100" src="@news.MainPicturePath" alt=""></div>
+@*                что за пробелы между строками? )
+*@                    <div class="small-img"><img height="100" src="@news.MainPicturePath" alt=""></div>
                     <a href="@Url.ActionLink("PicturesEdit", "Pictures", new {NewsId = news.Id})"><button>edit</button></a>
                 
 
