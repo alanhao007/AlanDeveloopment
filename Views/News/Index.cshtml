@@ -23,7 +23,7 @@
 
                 {
                     <input type="hidden" name="Id" value="@news.Id" />
-                    <input class="input_submit" type="submit" value="Удалить новость">
+                    <input class="input_submit" type="submit" id="delete" value="Удалить новость">
                 }
             </td>
             
@@ -53,7 +53,6 @@
 td a button{
     background: none;
     border-radius: 5px;
-
     padding: 5px;
     cursor: pointer;
 }
@@ -71,14 +70,6 @@ th{
 .small-img img{
     height: 100px;
 }
-.galary{
-    display: flex;
-    flex-wrap: wrap;
-}
-.block img{
- height: 300px;
- padding: 10px;
-}
 .galary--button{
     background: none;
     border-radius:5px; 
@@ -88,9 +79,42 @@ th{
 .galary--content{
     display: flex;
 }
-.block{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+input {
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+    input:hover {
+        border: 1px solid #59d9c3;
+        background-color: #58596b;
+    }
+
+button {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
+}
+
+    button:hover {
+        border: 1px solid #59d9c3;
+        background-color: #58596b;
+    }
+
+img {
+    height: 100px;
+}
+#delete {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
 }
 </style>

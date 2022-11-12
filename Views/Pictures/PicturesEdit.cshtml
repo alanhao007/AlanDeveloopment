@@ -1,6 +1,9 @@
 ﻿ @model List<Pictures>
+
+ <a href="@Url.ActionLink("Index", "News")"><button class="button">Назад</button></a>
+  <h1 class="title">Все картинки новости</h1>
  <div class="main--galary">
-<a href="@Url.ActionLink("Index", "News")"><button>Назад</button></a>
+
 @foreach(var pictures in Model)
 {
     <div class="galary">        
@@ -15,11 +18,59 @@
 }
 </div>
 <style>
-    .main--galary{
+    .block{
+        align-self:flex-start;
+    }
+.main--galary{
         display:flex;
         justify-content:space-evenly;
         flex-direction:row;
-
+}
+.title{
+    text-align:center;
+    color:white;
+    font-weight:600;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom:30px;
+}
+.button{
+    margin:20px 0px 40px 0px;
+}input {
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+    input:hover {
+        border: 1px solid #59d9c3;
+        background-color: #58596b;
     }
-   
+
+button {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
+}
+
+    button:hover {
+        border: 1px solid #59d9c3;
+        background-color: #58596b;
+    }
+
+img {
+    height: 100px;
+}
+#delete {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: #252740;
+    transition: 1s;
+    border: 1px solid transparent;
+}
 </style>
