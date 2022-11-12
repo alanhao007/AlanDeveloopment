@@ -1,0 +1,114 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Roboto';
+}
+
+header:hover {
+    background-color: #58596b;
+}
+
+body {
+    margin: 20px;
+    background-color: #121321;
+}
+
+.head {
+    box-shadow: 0px 9px 5px -5px white (34, 60, 80, 0.35);
+    margin-bottom: 20px;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    background-color: #252740;
+    transition: 0.5s;
+}
+
+textarea {
+    background-color: #252740;
+    border: none;
+}
+
+.head_title {
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main_table {
+    width: 100%;
+}
+
+    .main_table td {
+        padding: 5px 10px;
+    }
+
+.news-description {
+    width: 50%;
+}
+
+.news-name_td {
+    width: 200px;
+}
+
+td {
+    background: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.news-name {
+    width: 20%;
+}
+
+
+input {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+input {
+    background-color: #252740;
+    border: none;
+    transition: 1s;
+}
+
+button {
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #252740;
+    border: none;
+    transition: 1s;
+}
+
+    button:hover {
+        border: 1px solid #59d9c3;
+        background-color: #58596b;
+    }
+
+img {
+    height: 100px;
+}

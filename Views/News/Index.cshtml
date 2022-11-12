@@ -1,0 +1,96 @@
+﻿@model List<News>
+
+
+<a href="@Url.ActionLink("Create", "News")"><button>добавить новость</button></a>
+
+<table class="main--table" border="1px">
+
+
+    <tr>
+        <th class="news--name">Название новости</th>
+        <th>Описание новости</th>
+        <th>Действия</th>
+        <th>Фотографии</th>
+    </tr>
+    @foreach (var news in Model)
+    {
+        <tr>
+            <td>@news.Name</td>
+            <td class="news--description">@news.Description</td>
+            <td class="news--settings">
+                <a href="@Url.ActionLink("Edit", "News", new {NewsId = news.Id})"><button>редактировать</button></a>
+                @using (Html.BeginForm("DeleteNews", "News", new { }))
+
+                {
+                    <input type="hidden" name="Id" value="@news.Id" />
+                    <input class="input_submit" type="submit" value="Удалить новость">
+                }
+            </td>
+            
+            <td>
+                
+                    <div class="small-img"><img height="100" src="@news.MainPicturePath" alt=""></div>
+                    <a href="@Url.ActionLink("PicturesEdit", "Pictures", new {NewsId = news.Id})"><button>edit</button></a>
+                
+
+
+            </td>
+        </tr>
+    }
+</table>
+<style>
+    .main--table{
+    width: 100%;
+        border:1px solid white;
+}
+.main--table td{
+    padding: 5px 10px;
+    border:1px solid white;
+}
+.news--description{
+    width:50% ;
+}
+td a button{
+    background: none;
+    border-radius: 5px;
+
+    padding: 5px;
+    cursor: pointer;
+}
+th{
+    text-align:center;
+    border:1px solid white;
+}
+.news--button{
+      border:1px solid grey;
+       background: black;
+}
+.news--name{
+    width:20% ;
+}
+.small-img img{
+    height: 100px;
+}
+.galary{
+    display: flex;
+    flex-wrap: wrap;
+}
+.block img{
+ height: 300px;
+ padding: 10px;
+}
+.galary--button{
+    background: none;
+    border-radius:5px; 
+    font-size: 20px;
+    margin: 0px 10px;
+}
+.galary--content{
+    display: flex;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+</style>

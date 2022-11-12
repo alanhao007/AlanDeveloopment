@@ -1,0 +1,128 @@
+﻿@model News
+
+<table class="main_table" border="1">
+    <tr>
+        <th class="news-name">Наименнование новости</th>
+        <th class="news-description">Описание новости</th>
+        <th class="news-save"></th>
+    </tr>
+    <tr class="news">
+        @using (Html.BeginForm("Edit"))
+        {
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <td><input type="text" name="Name" class="news-name_td" value="@Model.Name"></td>
+            <td><textarea name="Description" id="" cols="30" rows="10">@Model.Description</textarea></td>
+            <td><input class="input_submit" type="submit" value="Сохранить изменения"></td>
+        }
+    </tr>
+</table>
+@using (Html.BeginForm("DeleteNews", "News", new { }))
+{
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input class="input_submit" type="submit" value="Удалить новость">
+}
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Roboto';
+
+}
+
+header:hover {
+    background-color: #58596b;
+}
+
+body {
+    margin: 20px;
+    background-color: #121321;
+}
+
+.head {
+    box-shadow: 0px 9px 5px -5px white (34, 60, 80, 0.35);
+    margin-bottom: 20px;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    background-color: #252740;
+    transition: 0.5s;
+}
+  .main_table{
+    width: 100%;
+        border:1px solid white;
+}
+.main_table td{
+    padding: 5px 10px;
+    border:1px solid white;
+}
+th{
+    text-align:center;
+    border:1px solid white;
+}
+textarea {
+    background-color: #252740;
+    border: none;
+    width: 100%;
+}
+
+.head_title {
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main_table {
+    width: 100%;
+}
+
+.main_table td {
+    padding: 5px 10px;
+}
+
+.news-description {
+    width: 50%;
+}
+
+.news-name_td {
+    width: 400px;
+}
+
+td {
+    background: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.news-name {
+    width: 20%;
+}
+
+
+
+
+.input_submit {
+    padding: 10px 40px;
+    border-radius: 10px;
+}
+
+input {
+    background-color: #252740;
+    border: none;
+    transition: 1s;
+}
+
+input:hover {
+    border: 1px solid #59d9c3;
+    background-color: #58596b;
+}
+</style>
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+﻿ @model List<Pictures>
+ <div class="main--galary">
+<a href="@Url.ActionLink("Index", "News")"><button>Назад</button></a>
+@foreach(var pictures in Model)
+{
+    <div class="galary">        
+        <div class="block"><img src="@pictures.FilePath">
+            @using (Html.BeginForm("DeletePicture", "Pictures", new { }))
+
+                {
+                    <button class="galary--button" name="Id" value="@pictures.Id">удалить</button>
+                }
+            <button class="galary--button">сделать главным</button></div></div>
+    
+}
+</div>
+<style>
+    .main--galary{
+        display:flex;
+        justify-content:space-evenly;
+        flex-direction:row;
+
+    }
+   
+</style>

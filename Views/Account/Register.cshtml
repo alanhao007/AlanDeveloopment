@@ -1,0 +1,36 @@
+﻿@model AdminPanel.ViewModels.RegisterViewModel
+
+
+<h2>Регистрация нового пользователя</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+   @* если пользовталеь некорректно ввел данные, то ошибки будут отражаться уровня модели,
+    ошибки валидации для отдельных свойств не отображаются*@
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        @*  отобразится та надпись, которая привязана через аннотации к совйствам класса RegisterViewModels*@
+        <label asp-for="Email"></label><br /> 
+        @*  поле для ввода email, в которое пользователь будет вбивать свои данные*@ 
+       <input asp-for="Email" />
+        @*  проверяем, коректно ли пользоваетль введ свои данные в поле email*@     
+   <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Year"></label><br />
+        <input asp-for="Year" />
+        <span asp-validation-for="Year"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="PasswordConfirm"></label><br />
+        <input asp-for="PasswordConfirm" />
+        <span asp-validation-for="PasswordConfirm"></span>
+    </div>
+    <div>
+        @*  кнопка, которая отправляет данные из заполненых полей на сервер*@ 
+       <input type="submit" value="Регистрация" />
+    </div>
+</form>
