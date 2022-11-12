@@ -25,6 +25,9 @@ namespace AdminPanel.Services
             return news.Id;
         }
 
+        //public void Delete(int id)
+        //вообще, public - плохая практика. Из любого класса разраб может обратиться к методу удаления поля. Это небезопасно.
+        //используй interface с методами, его имплементируй в контроллере.
         public void Delete(News news)
         {
             db.News.Remove(news);
