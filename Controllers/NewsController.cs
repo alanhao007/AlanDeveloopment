@@ -37,6 +37,9 @@ namespace AdminPanel.Controllers
             NewsService.Edit(News);
             return RedirectToAction("Index");
         }
+         //тут неверно, есть более легкий способ - передача id
+        //то есть DeleteNews(int id)
+        //метод Post должен быть
         public IActionResult DeleteNews([FromForm] News News)
         {
             //Получить айди новости для удаления
