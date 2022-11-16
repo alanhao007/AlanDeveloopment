@@ -37,6 +37,10 @@ namespace AdminPanel.Controllers
             NewsService.Edit(News);
             return RedirectToAction("Index");
         }
+        //1. Зачем FromForm? Уберите его. Ниже (пункт 2) правильное написание
+        //2. public void Delete(int id)
+        //вообще, public - плохая практика. Из любого класса разраб может обратиться к методу удаления поля. Это небезопасно.
+        //используй interface с методами, его имплементируй в контроллере.
         public IActionResult DeleteNews([FromForm] News News)
         {
             //Получить айди новости для удаления
